@@ -1,7 +1,7 @@
-// Practice: Function Arguments
-// The learning objective of this exercise is to practice defining and using function arguments.
+// Challenge: Multiple Punctuation
+// Challenges are optional exercises that you can work once you've completed all the practice exercises and understand the concepts in them.
 
-// Add a new argument to the function so that a developer can specify which character should be displayed instead of it always being an exclamation point.
+// Add a new argument to the function so that a developer can specify how many times the special character should be added.
 
 // Example output:
 
@@ -9,15 +9,15 @@
 
 // The walrus
 
-// The walrus danced?
+// The walrus danced****
 
-// The walrus danced? through
+// The walrus danced**** through
 
-// The walrus danced? through the
+// The walrus danced**** through the
 
-// The walrus danced? through the trees?
+// The walrus danced**** through the trees****
 
-// The walrus danced? through the trees? in
+// The walrus danced**** through the trees**** in
 
 // etc..
 
@@ -26,7 +26,7 @@ let sentence = ["The", "walrus", "danced", "through", "the", "trees", "in", "the
 
 
 
-function addExcitement(theWordArray, punctuation) {
+function addExcitement(theWordArray, punctuation, numPunctuation) {
 
     // Each time the for loop executes, you're going to add one more word to this string
     let buildMeUp = ""
@@ -34,7 +34,7 @@ function addExcitement(theWordArray, punctuation) {
     for (let i = 0; i < theWordArray.length; i++) {
 
         if ((i+1) % 3 === 0) {
-            buildMeUp += theWordArray[i] + `${punctuation} `
+            buildMeUp += theWordArray[i] + `${punctuation.repeat(numPunctuation)} `
         } else {
             buildMeUp += theWordArray[i] + " "
         }
@@ -46,4 +46,4 @@ function addExcitement(theWordArray, punctuation) {
 }
 
 // Invoke the function and pass in the array
-addExcitement(sentence, "?")
+addExcitement(sentence, "*", 4)
